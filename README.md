@@ -3140,7 +3140,7 @@ for (int i = 0; i < sequence.size(); i++) {
 
 #### 3.4.2 Two way BFS
 
-#### 3.4.3 从终点开始搜
+#### 3.4.3 Searching from the end point
 
 #### 3.4.4 Iterative deepening search (binary increase/decrease)
 
