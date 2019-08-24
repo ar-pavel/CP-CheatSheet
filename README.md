@@ -3,7 +3,7 @@
 
     Orange Juice For Competitive Programmer
 
-![balloon](https://assets-cdn.github.com/images/icons/emoji/unicode/1f388.png?v5)
+![balloon](https://cdn2.iconfinder.com/data/icons/happy-birthday-cartoon-2/512/d308_15-512.png)
 ![balloon](https://assets-cdn.github.com/images/icons/emoji/unicode/1f388.png?v5)
 ![balloon](https://assets-cdn.github.com/images/icons/emoji/unicode/1f388.png?v5)
 ![balloon](https://assets-cdn.github.com/images/icons/emoji/unicode/1f388.png?v5)
