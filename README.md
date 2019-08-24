@@ -5325,7 +5325,7 @@ struct point {
 };
 ```
 
-#### 7.1.2 向量点乘 叉乘
+#### 7.1.2 Vector point multiplication
 
 > a = (x1, y1)
 > 
@@ -5349,11 +5349,11 @@ struct point {
 > 
 > if 0: b is at right of a
 > 
-> a x b = area of 平行四边形
+> a x b = area of Parallelogram
 > 
-> a x b x c = area of 平行六面体, c = (x3, y3)
+> a x b x c = area of Parallelepiped, c = (x3, y3)
 
-#### 7.1.5 直线公式
+#### 7.1.5 Straight line formula
 
 > (x, y) = (x1, y1) + k * ((x2, y2) - (x1, y1))
 
