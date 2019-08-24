@@ -2069,16 +2069,16 @@ int main() {
 ```c++
 // http://blog.csdn.net/u010700335/article/details/38930175
 
-const int maxn = 26;//26个小写字母或者大写字母，再加上0~9就是72
-//定义字典树结构体
+const int maxn = 26;//26 lowercase letters or uppercase letters, plus 0~9 is 72
+//Defining a dictionary tree structure
 typedef struct Trie
 {
-    bool flag;//从根到此是否为一个单词
-    Trie *next[maxn];//有多少个分支
+    bool flag;//Is it a word from the root to this?
+    Trie *next[maxn];//How many branches are there?
 }Trie;
-// 声明一个根，不含任何信息
+// Declare a root without any information
 Trie *root;
-//初始化该根
+//Initialize the root
 void trie_init()
 {
     int i;
@@ -2087,7 +2087,7 @@ void trie_init()
     for(i=0;i<maxn;i++)
         root->next[i] = NULL;
 }
-// 插入一个字符串
+// Insert a string
 void trie_insert(char *word)
 {
     //int i = 0;
@@ -2097,7 +2097,7 @@ void trie_insert(char *word)
     while(*word != '\0')
     {
        // cout << "root**" << tem->next[0];
-        if(tem->next[*word-'a'] == NULL)// 为空才建立
+        if(tem->next[*word-'a'] == NULL)// Only to be established
         {
             Trie *cur = new Trie;
             cur->flag = false;
@@ -2109,7 +2109,7 @@ void trie_insert(char *word)
         //cout << *word << "**";
         word++;
     }
-    tem->flag = true;//插入一个完整的单词
+    tem->flag = true;//Insert a complete word
 }
 // 查找一个字符串
 bool trie_search(char *word)
@@ -3105,13 +3105,13 @@ struct BloomFilterSimilar {
 #### 3.1.1 Hanoi
 
 ```C++
-void hanoi(int n, char x, char y, char z) { // 将 x 上编号 1 至 n 的圆盘移到 z, y 作辅助塔
+void hanoi(int n, char x, char y, char z) { /// Move the number 1 to n on x to z, y as the auxiliary tower
     if (n == 1)
-        printf("%d from %c to %c\n", n, x, z); // 将编号为 n 的圆盘从 x 移到 z
+        printf("%d from %c to %c\n", n, x, z); // Move the number n from x to z
     else {
-        hanoi(n-1, x, z, y); // 将 x 上编号 1 至 n-1 的圆盘移到 y, z 作辅助塔
-        printf("%d from %c to %c\n", n, x, z); // 将编号为 n 的圆盘从 x 移到 z
-        hanoi(n-1, y, x, z); // 将 y 上编号 1 至 n-1 的圆盘移到 z, x 作辅助塔
+        hanoi(n-1, x, z, y); // Move the discs numbered 1 through n-1 on x to y, z as an auxiliary tower
+        printf("%d from %c to %c\n", n, x, z); // Move the number n from x to z
+        hanoi(n-1, y, x, z); // Move the number 1 to n-1 on y to z, x as an auxiliary tower
     }
 }
 ```
@@ -3138,17 +3138,17 @@ for (int i = 0; i < sequence.size(); i++) {
 
 ### 3.4 Search
 
-#### 3.4.2 双向 BFS
+#### 3.4.2 Two way BFS
 
 #### 3.4.3 从终点开始搜
 
-#### 3.4.4 迭代加深搜索 (binary increase/decrease)
+#### 3.4.4 Iterative deepening search (binary increase/decrease)
 
 > placeholder
 
 ### 3.5 Brute Force
 
-#### 3.5.1 子集生成
+#### 3.5.1 Subset generation
 
 ## 4. String
 
@@ -3574,7 +3574,7 @@ void dijkstra(int s) {
 > 2. A graph is bipartite if and only if it is 2-colorable, (i.e. its chromatic number is less than or equal to 2).
 > 3. The spectrum of a graph is symmetric if and only if it's a bipartite graph.
 
-##### 5.4.1.1 Hungarian algorithm 匈牙利算法
+##### 5.4.1.1 Hungarian algorithm 
 
 > O(E * V)
 
@@ -3678,7 +3678,7 @@ struct Network {
 int n, m, top, x, y;
 int ans;
 
-int disx[MAXN], disy[MAXN], matx[MAXN], maty[MAXN];//x,y,分别为二分图的两个点集,mat为每个点在对侧集合的匹配点,如果当前没有匹配点则为-1 
+int disx[MAXN], disy[MAXN], matx[MAXN], maty[MAXN];//x, y, respectively, two sets of points of the bipartite graph, mat is the matching point of each point on the opposite side, if there is no matching point currently, it is -1
 
 struct edge {
     int to;
@@ -3698,14 +3698,14 @@ bool bfs() { // 寻找最短增广路
     memset(disy, 0, sizeof(disy));
     for (int i = 1; i <= n; i++)
         if (matx[i] == -1)
-            q.push(i); // 找到未盖点,入队 
-    while (!q.empty()) { // 在二分图另一个点集的非盖点中寻找增广路 
+            q.push(i); // Find uncovered points, enter the team
+    while (!q.empty()) { // Looking for augmentation road in the non-cover point of another point set of the bipartite graph 
         int x = q.front(); q.pop();
         for (edge *i = prev[x]; i; i = i->next)
             if (!disy[i->to]) {
                 disy[i->to] = disx[x] + 1;
                 if (maty[i->to]==-1)
-                    ret = 1; // 找到增广路 
+                    ret = 1; // Find Zengguang Road 
                 else
                     disx[maty[i->to]] = disy[i->to] + 1, q.push(maty[i->to]);    
             }
@@ -3713,7 +3713,7 @@ bool bfs() { // 寻找最短增广路
     return ret;
 }
 
-bool dfs(int x) { // 沿增广路增广 
+bool dfs(int x) { // Augmentation along Zengguang Road 
     for (edge *i = prev[x]; i; i = i->next) {
         if (disy[i->to] == disx[x] + 1) {
             disy[i->to] = 0;
@@ -3735,7 +3735,7 @@ int main() {
     {
         scanf("%d%d",&x,&y);x++;y++;
         insert(i,x);insert(i,y);
-    }建图请自动忽略*/
+    }Please automatically ignore the construction*/
     while (bfs()) {
         for (int i = 1; i <= m; i++)
             if (matx[i] == -1 && dfs(i))
@@ -3749,7 +3749,7 @@ int main() {
 
 ##### 5.4.2.1 Blossom Algorithm
 
-[一般图最大匹配](http://www.conlan.cc/2013/03/08/%E4%B8%80%E8%88%AC%E5%9B%BE%E6%9C%80%E5%A4%A7%E5%8C%B9%E9%85%8D/)
+[General map maximum match](http://www.conlan.cc/2013/03/08/%E4%B8%80%E8%88%AC%E5%9B%BE%E6%9C%80%E5%A4%A7%E5%8C%B9%E9%85%8D/)
 
 ```c++
 const int NMax = 230;
@@ -3878,7 +3878,7 @@ int main() {
 }
 ```
 
-### 5.5 Maximum Flow Problem 最大流
+### 5.5 Maximum Flow Problem 
 
 #### 5.5.1 Dinic
 ```c++
@@ -4196,52 +4196,50 @@ void min_cost_max_flow() {
 
 > placeholder
 
-### 5.6 强连通分量 图的 割点, 桥, 双连通分支
+### 5.6 Strongly connected component graph cut point, bridge, double connected branch
 
 ``https://www.byvoid.com/blog/biconnect``
 
-> [点连通度与边连通度]
+> [Point connectivity and edge connectivity]
 > 
-> 在一个无向连通图中，如果有一个顶点集合，删除这个顶点集合，以及这个集合中所有顶点相关联的边以后，原图变成多个连通块，就称这个点集为割点集合。一个图的点连通度的定义为，最小割点集合中的顶点数。
-> 
-> 类似的，如果有一个边集合，删除这个边集合以后，原图变成多个连通块，就称这个点集为割边集合。一个图的边连通度的定义为，最小割边集合中的边数。
-> 
-> [双连通图、割点与桥]
-> 
-> 如果一个无向连通图的点连通度大于1，则称该图是点双连通的(point biconnected)，简称双连通或重连通。一个图有割点，当且仅当这个图的点连通度为1，则割点集合的唯一元素被称为割点(cut point)，又叫关节点(articulation point)。
-> 
-> 如果一个无向连通图的边连通度大于1，则称该图是边双连通的(edge biconnected)，简称双连通或重连通。一个图有桥，当且仅当这个图的边连通度为1，则割边集合的唯一元素被称为桥(bridge)，又叫关节边(articulation edge)。
-> 
-> 可以看出，点双连通与边双连通都可以简称为双连通，它们之间是有着某种联系的，下文中提到的双连通，均既可指点双连通，又可指边双连通。
-> 
-> [双连通分支]
-> 
-> 在图G的所有子图G'中，如果G'是双连通的，则称G'为双连通子图。如果一个双连通子图G'它不是任何一个双连通子图的真子集，则G'为极大双连通子图。双连通分支(biconnected component)，或重连通分支，就是图的极大双连通子图。特殊的，点双连通分支又叫做块。
-> 
-> [求割点与桥]
-> 
-> 该算法是R.Tarjan发明的。对图深度优先搜索，定义DFS(u)为u在搜索树（以下简称为树）中被遍历到的次序号。定义Low(u)为u或u的子树中能通过非父子边追溯到的最早的节点，即DFS序号最小的节点。根据定义，则有：
-> 
-> Low(u)=Min { DFS(u) DFS(v) (u,v)为后向边(返祖边) 等价于 DFS(v)<DFS(u)且v不为u的父亲节点 Low(v) (u,v)为树枝边(父子边) }
-> 
-> 一个顶点u是割点，当且仅当满足(1)或(2) (1) u为树根，且u有多于一个子树。 (2) u不为树根，且满足存在(u,v)为树枝边(或称父子边，即u为v在搜索树中的父亲)，使得DFS(u)<=Low(v)。
-> 
-> 一条无向边(u,v)是桥，当且仅当(u,v)为树枝边，且满足DFS(u)<Low(v)。
-> 
-> [求双连通分支]
-> 
-> 下面要分开讨论点双连通分支与边双连通分支的求法。
-> 
-> 对于点双连通分支，实际上在求割点的过程中就能顺便把每个点双连通分支求出。建立一个栈，存储当前双连通分支，在搜索图时，每找到一条树枝边或后向边(非横叉边)，就把这条边加入栈中。如果遇到某时满足DFS(u)<=Low(v)，说明u是一个割点，同时把边从栈顶一个个取出，直到遇到了边(u,v)，取出的这些边与其关联的点，组成一个点双连通分支。割点可以属于多个点双连通分支，其余点和每条边只属于且属于一个点双连通分支。
-> 
-> 对于边双连通分支，求法更为简单。只需在求出所有的桥以后，把桥边删除，原图变成了多个连通块，则每个连通块就是一个边双连通分支。桥不属于任何一个边双连通分支，其余的边和每个顶点都属于且只属于一个边双连通分支。
-> 
-> [构造双连通图]
-> 
-> 一个有桥的连通图，如何把它通过加边变成边双连通图？方法为首先求出所有的桥，然后删除这些桥边，剩下的每个连通块都是一个双连通子图。把每个双连通子图收缩为一个顶点，再把桥边加回来，最后的这个图一定是一棵树，边连通度为1。
-> 
-> 统计出树中度为1的节点的个数，即为叶节点的个数，记为leaf。则至少在树上添加(leaf+1)/2条边，就能使树达到边二连通，所以至少添加的边数就是(leaf+1)/2。具体方法为，首先把两个最近公共祖先最远的两个叶节点之间连接一条边，这样可以把这两个点到祖先的路径上所有点收缩到一起，因为一个形成的环一定是双连通的。然后再找两个最近公共祖先最远的两个叶节点，这样一对一对找完，恰好是(leaf+1)/2次，把所有点收缩到了一起。
+> In an undirected connected graph, if there is a set of vertices, delete the set of vertices, and the edges associated with all the vertices in the set, the original image becomes a plurality of connected blocks, which is called the set of cut points. . The point connectivity of a graph is defined as the number of vertices in the minimum set of cut points. 4206> 
+> Similarly, if there is an edge collection, after deleting the edge collection, the original image becomes a plurality of connected blocks, and the point set is called a cut edge set. The edge connectivity of a graph is defined as the number of edges in the minimum cut edge set. 4207
 
+> [Double connected graph, cut point and bridge]
+> 
+> If the point connectivity of an undirected connected graph is greater than 1, the graph is said to be point biconnected, referred to as dual connectivity or reconnect. A graph has a cut point. If and only if the graph has a point connectivity of 1, the unique element of the cut point set is called a cut point, also called an articulation point. 
+> 
+> If the edge connectivity of an undirected connectivity graph is greater than 1, the graph is said to be edge biconnected, referred to as dual connectivity or reconnect. A graph has a bridge. If and only if the edge connectivity of the graph is 1, the unique element of the cut edge set is called a bridge, also called an articulation edge.
+> 
+> It can be seen that point double connectivity and edge dual connectivity can be referred to as dual connectivity, and there is a certain relationship between them. The dual connectivity mentioned below can refer to both dual connectivity and edge dual connectivity. 
+> 
+> [Double connected branch]
+> 
+>In all subgraphs G' of the graph G, if G' is double-connected, then G' is a bi-connected subgraph. If a biconnected subgraph G' is not a true subset of any biconnected subgraph, then G' is a maximally biconnected subgraph. A biconnected component, or a reconnected branch, is the maximal biconnected subgraph of the graph. Special, point double connected branches are also called blocks.
+> 
+> [Cutting point and bridge]
+> 
+> The algorithm was invented by R.Tarjan. For the depth-first search of the graph, define DFS(u) as the order number that u is traversed in the search tree (hereinafter referred to as the tree). Define the earliest node in the subtree where Low(u) is u or u that can be traced through the non-parent side, that is, the node with the lowest DFS number. By definition, there are:
+> 
+>Low(u)=Min { DFS(u) DFS(v) (u,v) is the backward edge (return to the ancestor) The father node Low equivalent to DFS(v)<DFS(u) and v is not u (v) (u,v) is the edge of the branch (father and son) }
+> 
+> A vertex u is a cut point if and only if (1) or (2) (1) u is the root of the tree, and u has more than one subtree. (2) u is not the root of the tree, and satisfies the existence of (u, v) as the edge of the branch (or father and child, ie u is the father of the v in the search tree), such that DFS(u)<=Low(v).
+> 
+> An undirected edge (u, v) is a bridge if and only if (u, v) is a branch edge and satisfies DFS(u)<Low(v).
+> 
+> [Seeking double connected branches]
+> 
+> In the following, we should discuss the method of the point of the double connected branch and the edge double connected branch separately.
+> 
+> For the point double-connected branch, in fact, in the process of finding the cut point, the double-connected branch of each point can be obtained by the way. Create a stack that stores the current double-connected branch. When searching for a map, each time you find a branch or backward edge (not a cross-edge), you add the edge to the stack. If DFS(u)<=Low(v) is met at a certain time, u is a cut point, and the edges are taken out from the top of the stack until the edge (u, v) is encountered, and the extracted edges are associated with them. The point that makes up a point is a double connected branch. A cut point can belong to multiple point double connected branches, and the remaining points and each edge belong to only one point and belong to one point double connected branch.
+> 
+> For edge-and-double connected branches, the method is simpler. After all the bridges are found, the bridge edges are deleted, and the original image becomes a plurality of connected blocks. Each connected block is a side double connected branch. The bridge does not belong to any of the two-side connected branches, and the remaining edges and each vertex belong to and belong to only one edge-bi-connected branch. 
+> 
+> [Constructing a double connected graph]
+> 
+> A connected graph with a bridge, how to turn it into a double-connected graph by adding edges? The method is to first find all the bridges, then delete the bridge edges, and each of the remaining connected blocks is a double connected subgraph. Shrink each double connected subgraph into a vertex, and then add back the bridge. The last graph must be a tree with a side connectivity of 1. 4241
+>
+> Count the number of nodes with a degree of 1 in the tree, which is the number of leaf nodes, and record it as leaf. Then at least (leaf 1)/2 edges are added to the tree, so that the tree can be connected to the edge, so at least the number of edges added is (leaf 1)/2. The specific method is to first connect an edge between the two leaf nodes farthest from the two nearest common ancestors, so that all the points on the path from the two points to the ancestor can be contracted together, because a formed ring must be double Connected. Then find the two leaf nodes that are farthest from the nearest public ancestor, so that one pair is found, which is exactly (leaf 1)/2 times, and all the points are shrunk together. 4242
 find articulation point (cut vertex) / bridge (cutedge) in directed / undirected graph
 
 find and merge biconnected component in undirected graph
@@ -4363,7 +4361,7 @@ int main() {
 }
 ```
 
-### 5.7 Topological Sort / 拓扑排序
+### 5.7 Topological Sort 
 
 > Topological Sorting on Directed Acyclic Graph (DAG)
 >
@@ -4995,7 +4993,7 @@ void init_choose_n_k() {
 }
 ```
 
-#### 6.3.14 质数表
+#### 6.3.14 Prime number table
 
 ```C++
 int is_prime[UP_LIMIT + 1];
@@ -5148,7 +5146,7 @@ int main() { // multiply two number
 }
 ```
 
-### 6.4 Game Theory 博弈论
+### 6.4 Game Theory 
 
 #### 6.4.1 Impartial Combinatorial Game
 
@@ -5200,7 +5198,7 @@ bool appear[MAXSTATE];
 int sg[MAXSTATE]; // Sprague-Grundy // Nim Value
 void init_sg() {
 	sg[state] = 0;
-	for (int state = 1; state < MAXSTATE; state++) { // sg(x) = mex{sg(y) | y是x的后继局面} // mex{a[i]}表示a中未出现的最小非负整数
+	for (int state = 1; state < MAXSTATE; state++) { // sg(x) = mex{sg(y) | y is the successor of x} // mex{a[i]}表示aRepresents the smallest non-negative integer that does not appear in a
 		fill_n(appear, MAXSTATE, false);
 		for (int nx = 0; nx < state; nx++)
 			appear[sg[nx]] = true;
