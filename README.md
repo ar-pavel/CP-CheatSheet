@@ -1,7 +1,7 @@
    ACM-ICPC Cheat Sheet
 ==========================
 
-    Orange Juice 情報
+    Orange Juice For Competitive Programmer
 
 ![balloon](https://assets-cdn.github.com/images/icons/emoji/unicode/1f388.png?v5)
 ![balloon](https://assets-cdn.github.com/images/icons/emoji/unicode/1f388.png?v5)
