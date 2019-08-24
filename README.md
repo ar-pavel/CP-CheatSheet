@@ -1,5 +1,5 @@
-   ACM-ICPC Cheat Sheet
-==========================
+   Competitive Programming Cheat Sheet
+========================================
 
     Orange Juice For Competitive Programmer
 
@@ -2111,7 +2111,7 @@ void trie_insert(char *word)
     }
     tem->flag = true;//Insert a complete word
 }
-// 查找一个字符串
+// Find a string
 bool trie_search(char *word)
 {
     Trie *tem = root;
@@ -2143,22 +2143,22 @@ int main()
     int i,n;
     char tmp[50];
     trie_init();
-    cout << "请输入初始化字典树的字符串(字符0结束）：" << endl;
+    cout << "Please enter a string that initializes the dictionary tree (end of character 0):" << endl;
     while(cin >> tmp)
     {
         //cout << tmp << endl;
         if(tmp[0] == '0' && tmp[1] =='\0') break;
         trie_insert(tmp);
     }
-    cout << "请输入要查找的字符串：" << endl;
+    cout << "Please enter the string you are looking for" << endl;
     while(cin >> tmp)
     {
         //cout << tmp << endl;
         if(tmp[0] == '0' && tmp[1] =='\0') break;
         if(trie_search(tmp))
-            cout << "查找成功！再次输入查找，字符0结束查找：" << endl;
+            cout << "Find success! Enter search again, character 0 ends lookup:" << endl;
         else
-            cout << "查找失败！再次输入查找，字符0结束查找：" << endl;
+            cout << "Find failed! Enter search again, character 0 ends the search:" << endl;
     }
     return 0;
 }
@@ -2438,14 +2438,14 @@ void insert(int i, int value) {
 }
 ```
 
-> 修改区间+查询点，
+> Modified interval+Query point,
 > 
-> 【1】修改操作：将A[l..r]之间的全部元素值加上c；
+> [1] Modify operation: add all element values between A[l..r] to c; 
 > 
-> 【2】求和操作：求此时A[x]的值。
+> [2] Summation operation: Find the value of A[x] at this time. 
 > 
-> 这个模型中需要设置一个辅助数组B：B[i]表示A[1..i]到目前为止共被整体加了多少
-
+> This model needs to set an auxiliary array B: B[i] indicates how much A[1..i] has been added so far 
+>
 ```C++
 #define INTERVAL_LIMIT 100005
 
@@ -3568,7 +3568,7 @@ void dijkstra(int s) {
 
 ### 5.4 Maximum Matching
 
-#### 5.4.1 on Bipartite Graph 二分图
+#### 5.4.1 on Bipartite Graph 
 
 > 1. A graph is bipartite if and only if it does not contain an odd cycle.
 > 2. A graph is bipartite if and only if it is 2-colorable, (i.e. its chromatic number is less than or equal to 2).
