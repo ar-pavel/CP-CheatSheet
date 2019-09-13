@@ -5414,8 +5414,6 @@ struct point {
 
 > O(VlogV)
 
-#### 7.1.7 Polygon
-
 ```C++
 struct Point {
     long x;
