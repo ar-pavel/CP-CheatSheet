@@ -72,10 +72,12 @@
   - [2.10 Bloom Filter (?) (Similar)](#210-bloom-filter--similar)
 - [3. Methodology](#3-methodology)
   - [3.0 Greedy](#30-greedy)
+    - [3.0.1 Job Sequencing with Deadlines](#301-job-sequencing-with-deadlines)
+    - [3.0.2 Fractional Knapsack](#302-fractional-knapsack)
   - [3.1 Recursive](#31-recursive)
     - [3.1.1 Hanoi](#311-hanoi)
   - [3.2 Dynamic Programming](#32-dynamic-programming)
-    - [3.2.1 Longest Increasing Subsequence (LIS)](#321-longest-increasing-subsequence-lis)
+    - [3.2.1 Longest Increasing Subsequence (LIS)](#321-longest-increasing-subsequence-lis)    
   - [3.3 Divide and Conquer](#33-divide-and-conquer)
     - [3.3.1 binary search](#331-binary-search)
   - [3.4 Search](#34-search)
@@ -3105,8 +3107,65 @@ struct BloomFilterSimilar {
 
 ### 3.0 Greedy
 
-> It's Art.
+#### 3.0.1 Job Sequencing with Deadlines
+```C++
+vector<pair<int ,int > >A;
+bool flag[mx];
+bool cmp(pair<int ,int >a,pair<int ,int >b){
+    return a.second > b.second;
+}
 
+int Job_Sequencing_with_Deadlines(){
+    sort(all(A),cmp);
+    memo(flag,false);
+    int len = A.size(),max_day = 0,profit = 0;
+    rep(i,len){
+        int key = -1;
+        For(j,A[i].first){
+            if(flag[j]==false) key = j;
+        }
+        if(key != -1){
+            flag[key] = true;
+            cout << key << " " << A[i].second << endl;
+            profit += A[i].second;
+        }
+    }
+    return profit;
+}
+
+int main(){
+    int n = II;
+    rep(i,n){
+        int deadLine = II,profit = II;
+        A.pb(mp(deadLine,profit));
+    }
+    cout << "Profit :: " << Job_Sequencing_with_Deadlines() << endl;
+}
+```
+
+#### 3.0.2 Fractional Knapsack 
+ ```C++
+ vector<pair<db ,db > >A;
+
+bool cmp(pair<db ,db >a,pair<db ,db >b){
+    return (((a.first/a.second)-(b.first/b.second)) > EPS) ;
+}
+
+db Fractional_Knapsack(db m){
+    sort(all(A),cmp);
+    int len = A.size();
+    db profit = 0;
+    rep(i,len){
+        if(A[i].second<m){
+            profit += A[i].first;
+            m -= A[i].second;
+        }
+        else{
+            profit += (A[i].first * (m / A[i].second) );
+            break;
+        }
+ ```
+ 
 ### 3.1 Recursive
 
 #### 3.1.1 Hanoi
