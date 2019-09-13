@@ -119,7 +119,7 @@
     - [6.1.2 The Java Approach](#612-the-java-approach)
   - [6.2 Matrix](#62-matrix)
   - [6.3 Number Theory](#63-number-theory)
-    - [6.3.1 Euler function?](#631-%E6%AC%A7%E6%8B%89%E5%87%BD%E6%95%B0-)
+    - [6.3.1 Euler function?](#-euler-function)
     - [6.3.2 Euclidean algorithm/gcd](#632-%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95--gcd)
     - [6.3.3 Extended Euclidean algorithm](#633-%E6%89%A9%E5%B1%95%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95)
     - [6.3.4 Solving indefinite equation](#634-%E6%B1%82%E8%A7%A3%E4%B8%8D%E5%AE%9A%E6%96%B9%E7%A8%8B)
@@ -136,7 +136,8 @@
     - [6.3.14 Prime number table](#6314-prime-number-table)
     - [6.3.15 Fast Exponention](#6315-fast-exponention)
     - [6.3.16 Fast Fourier Transform FFT](#6316-fast-fourier-transform-fft)
-  - [6.4 Game Theory](#64-game-theory)
+    - [6.3.17 Locas Therorem](#6317-lucas-theorem)
+   - [6.4 Game Theory](#64-game-theory)
     - [6.4.1 Impartial Combinatorial Game](#641-impartial-combinatorial-game)
       - [6.4.1.1 Nim Game](#6411-nim-game)
       - [6.4.1.1 Composite Games – Sprague-Grundy Theorem and Nim Value](#6411-composite-games--sprague-grundy-theorem-and-nim-value)
@@ -4696,7 +4697,30 @@ Matrix Matrix::mirror() {
 
 ### 6.3 Number Theory
 
-#### 6.3.1 Euler function ?
+#### 6.3.1 Euler function
+```C++
+int p[mx];
+bool t[mx];
+unsigned long long esum[mx],phi[mx];
+void euler(){
+    forab(i,2,mx-7){
+        if(!t[i])p[++p[0]]=i,esum[i]=i-1;
+        for(int j=1;j<=p[0]&&i*p[j]<=mx-7;++j){
+            t[i*p[j]]=true;
+            if(i%p[j]==0){
+                esum[i*p[j]]=p[j]*esum[i];
+                break;
+            }else{
+                esum[i*p[j]]=(p[j]-1)*esum[i];
+            }
+        }
+    }
+    forab(i,2,mx-7){
+        phi[i] = esum[i];
+        esum[i]+=esum[i-1];
+    }
+}
+````
 
 #### 6.3.2 Euclidean algorithm / gcd
 
@@ -5252,6 +5276,31 @@ int main() { // multiply two number
 	}
 }
 ```
+#### 6.3.17 Lucas Theorem
+
+> Given three numbers n, r and p, compute value of nCr mod p.
+
+```C++
+int64 Lucas_theorm(int64 n,int64 r,int64 p){
+    generatefactorial(p);
+    int64 ans = 1;
+    while(n || r){
+        if(n%p < r%p) return 0;
+        ans *= ((fact[n%p]%p * BigMod(fact[r%p],p-2,p))%p * BigMod(fact[n%p - r%p],p-2,p))%p;
+        ans %= p;
+        n /= p;
+        r /= p;
+    }
+
+    return ans;
+}
+
+int main(){
+    int64 n = IL,r = IL,p = IL;
+    cout << Lucas_theorm(n,r,p) << endl;
+}
+```
+
 
 ### 6.4 Game Theory 
 
