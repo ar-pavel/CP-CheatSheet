@@ -151,7 +151,7 @@
       - [Gift Wrapping](#gift-wrapping)
       - [QuickHull](#quickhull)
       - [Graham scan](#graham-scan)
-    - [7.1.7 Polygon](#717-ploygon)
+    - [7.1.7 Polygon](#717-polygon)
 
 - [8. Tricks + Miscellaneous](#8-tricks--miscellaneous)
   - [8.1 Bit Manipulation](#81-bit-manipulation)
@@ -5509,7 +5509,7 @@ int main(int argc, char const *argv[]) {
 }
 ```
 
-#### 7.1.6 Polygon
+#### 7.1.7 Polygon
 
 ```C++
 struct polygon
