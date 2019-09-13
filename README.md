@@ -137,6 +137,8 @@
     - [6.3.15 Fast Exponention](#6315-fast-exponention)
     - [6.3.16 Fast Fourier Transform FFT](#6316-fast-fourier-transform-fft)
     - [6.3.17 Locas Therorem](#6317-lucas-theorem)
+    - [6.3.18 nCr](#6318-ncr)
+    
    - [6.4 Game Theory](#64-game-theory)
      - [6.4.1 Impartial Combinatorial Game](#641-impartial-combinatorial-game)
        - [6.4.1.1 Nim Game](#6411-nim-game)
@@ -5298,6 +5300,22 @@ int64 Lucas_theorm(int64 n,int64 r,int64 p){
 int main(){
     int64 n = IL,r = IL,p = IL;
     cout << Lucas_theorm(n,r,p) << endl;
+}
+```
+
+#### nCr
+```C++
+const int MAX = 1000 + 7;
+const int MOD = 1e9 + 7;
+int64 nCr[MAX][MAX];
+void make_nCr(){
+     nCr[0][0] = 1;
+        For(i,MAX-7) {
+                nCr[i][0] = 1;
+                For(j,i) {
+                        nCr[i][j] = (nCr[i-1][j-1] + nCr[i-1][j])%MOD;
+                }
+        }
 }
 ```
 
