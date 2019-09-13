@@ -159,7 +159,6 @@
   - [8.4 Fast Log](#84-fast-log)
   - [8.5 Squre Root](#85-squre-root)
 
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## 1. Basic
 
@@ -4846,6 +4845,48 @@ a / gcd(a, b) * b
 ```
 
 #### 6.3.9 Decomposition factor
+
+> Call get_fact() to get number of factors
+
+```C++
+const int maxn = 1001000;
+
+long long prime[maxn];
+
+void get_prime(){
+    memset(prime,0,sizeof(prime));
+
+    for(int i=2;i<maxn;i++){
+        if(!prime[i])prime[++prime[0]] = i;
+        for(int j=1;j<=prime[0]&&prime[j]*i<maxn;j++){
+            prime[prime[j]*i] = 1;
+            if(i%prime[j]==0)break;
+        }
+    }
+}
+
+long long get_fact(long long x){
+
+    long long ans = 1,tmp = x;
+    long long j = 1;
+
+    while(j<prime[0] and prime[j]<=tmp){
+            if(tmp%prime[j]==0){
+                long long cnt = 0;
+
+                while(tmp%prime[j]==0)
+                    tmp/=prime[j],cnt++;
+
+                ans*=(1+cnt);
+            }
+            j++;
+    }
+    if(tmp>1)ans*=2;   
+
+    return ans;
+}
+
+```
 
 ```C++
 long long x;
