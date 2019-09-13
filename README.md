@@ -4840,6 +4840,35 @@ int main(int argc, char const *argv[]) {
 // if ansd != 1, then NO answer
 // smallest ansx = (ansx % (n / gcd(a, n)) + (n / gcd(a, n))) % (n / gcd(a, n))
 ```
+```C++
+int64 BigMod(int64 B,int64 P,int64 M) {
+    int64 R=1;    //compute b^p%m
+    while(P>0)  {
+        if(P%2==1) {
+            R=(R*B)%M;
+        }
+        P/=2;
+        B=(B*B)%M;
+    }
+    return (int64)R;
+}
+
+int64 BigBigMod(int64 a,int64 b,int64 c,int64 m){
+    int64 ret = BigMod(b,c,m-1); // compute a^b^c % m
+    ret = BigMod(a,ret,m);
+    return ret;
+}
+
+int64 modInverse_prime(int64 B,int64 P) { return BigMod(B,P-2,P);}
+int64 modInverse_relativePrime(int64 B,int64 P) {return eea(B,P).second.first;}
+
+int64 get(int64 a,int64 m){
+    a %= m;
+    if(a<0) a += m;
+    return a;
+}
+```
+
 
 #### 6.3.7 Chinese remainder theorem
 ```C++
