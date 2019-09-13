@@ -127,7 +127,7 @@
     - [6.3.6 Solving the inverse of a module](#636-%E6%B1%82%E8%A7%A3%E6%A8%A1%E7%9A%84%E9%80%86%E5%85%83)
     - [6.3.7 Chinese remainder theorem](#637-%E4%B8%AD%E5%9B%BD%E5%89%A9%E4%BD%99%E5%AE%9A%E7%90%86)
     - [6.3.8 Least common multiple](#638-%E6%9C%80%E5%B0%8F%E5%85%AC%E5%80%8D%E6%95%B0)
-    - [6.3.9 Decomposition factor](#4847-decomposition-factor)
+    - [6.3.9 Decomposition factor](#639-decomposition-factor)
     - [6.3.10 Factor number](#6310-%E5%9B%A0%E6%95%B0%E4%B8%AA%E6%95%B0)
     - [6.3.11 Prime number judgment](#6311-%E7%B4%A0%E6%95%B0%E5%88%A4%E5%AE%9A)
       - [6.3.11.1 Miller Rabin Primality Test](#63111-miller-rabin-primality-test)
