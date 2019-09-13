@@ -139,7 +139,7 @@
   - [6.4 Game Theory](#64-game-theory)
     - [6.4.1 Impartial Combinatorial Game](#641-impartial-combinatorial-game)
       - [6.4.1.1 Nim Game](#6411-nim-game)
-      - [6.4.1.1 Composite Games – Sprague-Grundy Theorem and Nim Value](#6411-composite-games-sprague-grundy-theorem-and-nim-value)
+      - [6.4.1.1 Composite Games – Sprague-Grundy Theorem and Nim Value](#6411-composite-games--sprague-grundy-theorem-and-nim-value)
 - [7. Geometry](#7-geometry)
   - [7.1 2-Dimension Space](#71-2-dimension-space)
     - [7.1.1 Template of Point](#711-template-of-point)
