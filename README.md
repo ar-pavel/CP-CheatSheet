@@ -133,6 +133,7 @@
     - [6.3.10 Factor number](#6310-factor-number)
     - [6.3.11 Prime number judgment](#6311-prime-number-judgment)
       - [6.3.11.1 Miller Rabin Primality Test](#63111-miller-rabin-primality-test)
+      - [6.3.11.2 Bit Sieve](#63112-bit-sieve)      
     - [6.3.12 Binary conversion](#6312-binary-conversion)
     - [6.3.13 A / C](#6313-a--c)
     - [6.3.14 Prime number table](#6314-prime-number-table)
@@ -5142,6 +5143,28 @@ public:
         return true;
     }
 };
+```
+##### 6.3.11.2 Bit Sieve
+```C++
+#define ON(x) (Mark[x/64] & (1<<((x%64)/2)))
+#define mark(x) (Mark[x/64] |= (1<<((x%64)/2)))
+
+bool isPrime(int n){
+    return n > 1 && (n == 2 || ((n & 1) && !ON(n)));
+}
+
+void sieve(){
+    prime[++id] = 2;
+    for (ll i = 3; i < MX; i+=2){
+        if (!ON(i)){
+            prime[++id] = i;
+            for (ll j = i * i; j < MX; j += (i+i)){
+                mark(j);
+            }
+        }
+    }
+}
+
 ```
 
 #### 6.3.12 Binary conversion
