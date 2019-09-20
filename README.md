@@ -121,7 +121,7 @@
     - [6.1.2 The Java Approach](#612-the-java-approach)
   - [6.2 Matrix](#62-matrix)
   - [6.3 Number Theory](#63-number-theory)
-    - [6.3.1 Euler function?](#631-euler-functionn)
+    - [6.3.1 Euler function?](#631-euler-function)
     - [6.3.2 Euclidean algorithm/gcd](#632-%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95--gcd)
     - [6.3.3 Extended Euclidean algorithm](#633-%E6%89%A9%E5%B1%95%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95)
     - [6.3.4 Solving indefinite equation](#634-%E6%B1%82%E8%A7%A3%E4%B8%8D%E5%AE%9A%E6%96%B9%E7%A8%8B)
