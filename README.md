@@ -4779,7 +4779,7 @@ int phi (int n) {
   return ret;
 }
 ```
-> For maltiple calls
+> Phi sieve
 ```C++
 #define M 1000005
 int phi[M];
