@@ -1,5 +1,6 @@
    Competitive Programming Cheat Sheet
 ========================================
+![](https://img.shields.io/badge/NAU-in%20progress-blue.svg) ![](https://img.shields.io/badge/licence-MIT-green.svg) ![](https://img.shields.io/badge/Weeks%20Completed-8%2F20-orange.svg)
 
     Orange Juice For Competitive Programmer
 
