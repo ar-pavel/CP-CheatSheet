@@ -1,6 +1,6 @@
    Competitive Programming Cheat Sheet
 ========================================
-![](https://img.shields.io/badge/ICPC-in%20Preparation-blue.svg) ![](https://img.shields.io/badge/licence-MIT-green.svg) ![](https://img.shields.io/badge/Weeks%20Completed-8%2F20-orange.svg)
+![](https://img.shields.io/badge/ICPC-%20Preparation-blue.svg) ![](https://img.shields.io/badge/licence-MIT-green.svg) ![](https://img.shields.io/badge/Weeks%20Completed-8%2F20-orange.svg)
 
     Orange Juice For Competitive Programmer
 
