@@ -143,7 +143,6 @@
     - [6.3.16 Fast Fourier Transform FFT](#6316-fast-fourier-transform-fft)
     - [6.3.17 Locas Therorem](#6317-lucas-theorem)
     - [6.3.18 nCr](#6318-ncr)
-    
    - [6.4 Game Theory](#64-game-theory)
      - [6.4.1 Impartial Combinatorial Game](#641-impartial-combinatorial-game)
        - [6.4.1.1 Nim Game](#6411-nim-game)
