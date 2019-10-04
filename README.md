@@ -133,7 +133,7 @@
     - [6.3.8 Least common multiple](#638-least-common-multiple)
     - [6.3.9 Decomposition factor](#639-decomposition-factor)
     - [6.3.10 Factor number](#6310-factor-number)
-      - [6.3.10.1 Divisors - Divisor Sum](#6391-divisors--divisor-sum) 
+      - [6.3.10.1 Divisors - Divisor Sum](#63101-divisors--divisor-sum) 
     - [6.3.11 Prime number judgment](#6311-prime-number-judgment)
       - [6.3.11.1 Miller Rabin Primality Test](#63111-miller-rabin-primality-test)
       - [6.3.11.2 Bit Sieve](#63112-bit-sieve)      
