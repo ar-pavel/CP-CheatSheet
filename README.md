@@ -171,6 +171,7 @@
   - [8.3 Binary Display](#83-binary-display)
   - [8.4 Fast Log](#84-fast-log)
   - [8.5 Squre Root](#85-squre-root)
+  - [8.6 C++ Big Integer](#86-c-big-integer)
 
 
 ## 1. Basic
@@ -6229,13 +6230,13 @@ long long sq(long long a) {
 ```
 ### 8.6 C++ Big Integer
 > [Documentation](http://lightoj.com/article_show.php?article=1004)
-> 
+
 > Here we are giving a Big Integer library which has most of the operations including some mathematical and conditional operations. Mainly we have focused on some important facts.
-> 1)      The size of the code is an issue since if the size is too big then it would take so much time just to write it in real contests.
-> 2)      Negative numbers should be supported.
-> 3)      Number of digits shouldn’t be an issue. If we need more digits we should allocate them dynamically.
-> 4)      Some exceptions like division by zero should be reported properly such that related coding bugs can be found.
-> 5)      The code should produce the same result as the basic C++ mathematical operators. For example, we should output -1 for (-10 % 3) which is also the result found using C++.
+ 1)      The size of the code is an issue since if the size is too big then it would take so much time just to write it in real contests.
+ 2)      Negative numbers should be supported.
+ 3)      Number of digits shouldn’t be an issue. If we need more digits we should allocate them dynamically.
+ 4)      Some exceptions like division by zero should be reported properly such that related coding bugs can be found.
+ 5)      The code should produce the same result as the basic C++ mathematical operators. For example, we should output -1 for (-10 % 3) which is also the result found using C++.
 
 ```C++
  
