@@ -10,6 +10,8 @@
 - [1. Basic](#1-basic)
   - [1.1 C++ Solution Template](#11-c-solution-template)
     - [1.1.1 Optional include list](#111-optional-include-list)
+    - [1.1.2 Debug Helper](#112-debug-helper)
+
   - [1.2 Strings](#12-strings)
     - [1.2.1 C++ String](#121-c-string)
       - [read one line](#read-one-line)
@@ -216,6 +218,21 @@ int main() {
 #include <list>
 #include <cassert>
 #include <unordered_map>
+```
+
+#### 1.1.1 Debug Helper
+
+```C++
+#define deb(x) cerr << #x << " " << x <<endl;
+
+#define debs(args ...) cerr << __LINE__ << ": ", err(new istringstream(string(#args)), args), cerr << '\n'
+void err(istringstream *iss) {}
+template<typename T, typename ... Args> void err(istringstream *iss, const T &_val, const Args & ... args) {
+    string _name;
+    *iss >> _name;
+    if (_name.back()==',') _name.pop_back();
+    cerr << _name << " = " << _val << "; ", err(iss, args ...);
+}
 ```
 
 ### 1.2 Strings
