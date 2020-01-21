@@ -220,7 +220,7 @@ int main() {
 #include <unordered_map>
 ```
 
-#### 1.1.1 Debug Helper
+#### 1.1.2 Debug Helper
 
 ```C++
 #define deb(x) cerr << #x << " " << x <<endl;
