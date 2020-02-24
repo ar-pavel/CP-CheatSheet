@@ -27,6 +27,7 @@
     - [1.3.5 Heap](#135-heap)
     - [1.3.6 Sort](#136-sort)
     - [1.3.7 Compare](#137-compare)
+    - [1.3.8 Custom Sort Function for SET and Priority Queue](#138-Custom-SortFunction-for-Set-and-Priority-Queue)
       - [Using lambda expression](#using-lambda-expression)
       - [Compare function](#compare-function)
       - [Define operator <()](#define-operator-)
@@ -498,6 +499,22 @@ priority_queue<int, vector<int>, cmp> pq;
 ```
 
 Used by `priority_queue `.
+
+#### 1.3.8 Custom Sort Function for Set and Priority Queue
+
+```C++
+** set **
+
+auto cmp = [](int a, int b) { return ... };
+// auto cmp = [](const int& a, const int& b) { return ... };
+std::set<int, decltype(cmp)> s(cmp);
+
+** priority_queue **
+
+auto cmp = [](int a, int b) { return ... };
+// auto cmp = [](const int& a, const int& b) { return ... };
+priority_queue<int, vector<int>, decltype(cmp)> pq(cmp);
+```
 
 ### 1.4 STL Containers
 
