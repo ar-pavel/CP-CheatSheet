@@ -1,6 +1,6 @@
    Competitive Programming Cheat Sheet
 ========================================
-![](https://img.shields.io/badge/ICPC-%20Preparation-blue.svg) ![](https://img.shields.io/badge/CP-%20Cheatsheet-olive.svg) ![](https://img.shields.io/badge/licence-MIT-green.svg) ![](https://img.shields.io/badge/Completed-6%2F10-orange.svg)[![GitHub](https://img.shields.io/github/license/ar-pavel/CP-CheatSheet?color=blue)](https://github.com/ar-pavel/CP-CheatSheet/blob/master/LICENSE.md) ![GitHub stars](https://img.shields.io/github/stars/ar-pavel/CP-CheatSheet) ![GitHub forks](https://img.shields.io/github/forks/ar-pavel/CP-CheatSheet)
+![](https://img.shields.io/badge/ICPC-%20Preparation-blue.svg) ![](https://img.shields.io/badge/CP-%20Cheatsheet-olive.svg) ![](https://img.shields.io/badge/licence-MIT-green.svg) ![](https://img.shields.io/badge/Completed-6%2F10-orange.svg) [![GitHub](https://img.shields.io/github/license/ar-pavel/CP-CheatSheet?color=blue)](https://github.com/ar-pavel/CP-CheatSheet/blob/master/LICENSE.md) ![GitHub stars](https://img.shields.io/github/stars/ar-pavel/CP-CheatSheet) ![GitHub forks](https://img.shields.io/github/forks/ar-pavel/CP-CheatSheet)
 
     Most of the codes have been collected from different sources over internet
     Feel free to add any missing topics 
